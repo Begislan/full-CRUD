@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@900&family=Playfair+Display&display=swap');
+
+
+header{
+    border-bottom: 1px solid #999;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+}
+
+header h1 a{
+    color: forestgreen;
+    font-family: 'Merienda', cursive;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+}
+.nav_left{
+    margin-right: auto;
+}
+
+.nav_right{
+    display: flex;
+    padding-top: 2rem;
+}
+
+.post_entry{
+    margin-bottom: 2rem;
+}
+
+.post_entry h2 a:hover{
+    color: red;
+}

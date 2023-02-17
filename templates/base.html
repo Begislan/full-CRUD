@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@900&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">BegislanDEV Blog</a></h1>
+    </header>
+
+
+    {% if user.is_authenticated %}
+        <p>Добро пожаловать, {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">Выход</a></p>
+    {% else %}
+    <p>
+        <a href="{% url 'login' %}">Вход в сайт</a>
+        <a href="{% url 'signup' %}">Регистрация</a>
+    </p>
+
+    {% endif %}
+
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <h2><a href="{% url 'post_new' %}">Создать новый пост</a></h2>
+    </footer>
+</body>
+
+</html>
